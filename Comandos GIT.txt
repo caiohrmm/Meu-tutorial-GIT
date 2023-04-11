@@ -1,0 +1,81 @@
+Comandos git ->
+
+Para começar, devemos selecionar a pasta aonde eu quero que seja realizado meu repositório
+
+A partir de então, devo dar botao direito e selecionar a opcao GIT bash here
+
+Onde ela abre um terminal que recebe comandos git
+
+Para iniciarmos, devemos digitar o comando git init
+
+Após isso, para ver se meus arquivos estao adicionados ou não, devo digitar git status
+
+Com esse comando, ele me mostrará qual item ainda falta eu adicionar para fazer o controle
+
+Após isso, para adicionar um arquivo, basta dar git add "nomedoarquivo.tipo" ou
+
+para mandar todos os arquivos, git add .
+
+Para criar a primeira versao do codigo, precisamos utilizar o comando,
+
+git commit -m "Nome"
+
+Para definir o repositório github onde quero armazenar meus arquivos, o comando é simples
+
+git remote add origin urlrepositorio
+
+Para remover um repositório basta dar
+
+git remote remove origin
+
+Para enviar as informacoes usaremos git push
+
+
+COMO ATUALIZAR MEU REPOSITORIO?
+
+É simples, feita a modificaçao ou adiçao de algo em meu projeto, eu dou um git status, para confirmar que o arquivo foi mesmo alterado
+
+Após isso, dou git add ., Para assim receber a nova commit
+
+git commit -m "o que fiz na atualizacao"
+
+Ex: git commit -m "Acrescentei a tela de cadastro."
+
+após isso, git push
+
+E pronto, as atualizacoes ja ficam salvas em meu diretorio
+
+Como navego entre versoes/commits ?
+
+A partir do momento em que eu crio um commit dentro do git, ele fica armazenado, portanto, eu posso voltar no meu commit inicial e resetar todas as alteracoes do meu sistema
+como ir intercalando entre commits mais desatualizados para ter uma maior dinamica entre o sistema
+como faço isso?
+Cada commit tem seu id dentro do git bash a partir do comando git reflog
+
+git reset --hard iddocommit
+
+Desse modo, eu atualizo meu software de acordo com o id de commit que eu especificar no comando.
+
+Com todos esses pontos declarados, preciso entender que o git salva meus commits em branchs. Que sao basicamente
+diretórios. Porém, no diretorio padrao master, a boa pratica de programacao diz que nele só armazeno o que funciona
+e que está pronto. Com isso, preciso criar uma nova branch para fazer testes e alteracoes repentinas.
+
+Para ver qual branch estou utilizando, o comando é git branch
+Esse comando lista todas as branchs do meu projeto e, em destaque verde com *, a minha branch atual.
+
+Antes de criar uma nova branch, utilizamos git pull na branch principal
+
+Para criar uma nova branch, o comando é, git branch nomedabranchnova.
+
+Para trocar para outra branch, basta colocar o comando git checkout nomedabranch
+
+Vamos para a boa prática, colocarei meu código todo baseado nas branchs teste e master, ao final, farei um merge
+dos arquivos da teste para a principal
+
+Antes de unir as duas uso no diretorio principal (master)
+
+git pull
+
+git merge nomebranchteste
+
+git push
